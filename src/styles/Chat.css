@@ -1,0 +1,45 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  flex: 0.75;
+  background-color: #363a3f;
+  min-height: 100vh;
+  height: 100%;
+}
+.chat__input {
+  color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #474b53;
+  margin: 20px;
+  border-radius: 5px;
+  border-top: 1px solid gray;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.chat__input > form > input {
+  padding: 15px;
+  background: transparent;
+  border: none;
+  outline-width: 0;
+  color: #fff;
+  font-size: large;
+  width: 100%;
+}
+.chat__input > form {
+  flex: 1;
+}
+.chat__inputButton {
+  display: none;
+}
+
+.chat__inputIcons > .MuiSvgIcon-root {
+  padding: 5px;
+}
+.chat__massages {
+  flex: 1;
+}
