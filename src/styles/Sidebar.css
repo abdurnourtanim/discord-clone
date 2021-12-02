@@ -62,7 +62,11 @@
   font-size: smaller;
 }
 .sidebar__voiceIcons > .MuiSvgIcon-root {
-  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+.sidebar__voiceIcons > .MuiSvgIcon-root:hover {
+  color: #fff;
 }
 .sidebar__profileInfo {
   flex: 1;
@@ -72,5 +76,12 @@
   color: #fff;
 }
 .sidebar__profileIcons > .MuiSvgIcon-root {
-  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+.sidebar__profileIcons > .MuiSvgIcon-root:hover {
+  color: #fff;
+}
+.sidebar__profile__avatar {
+  cursor: pointer;
 }

@@ -8,10 +8,19 @@ import MicIcon from "@material-ui/icons/Mic";
 import SettingsIcon from "@material-ui/icons/Settings";
 import SignalCellularAltIcon from "@material-ui/icons/SignalCellularAlt";
 import React from "react";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
+import { auth } from "../firebase";
 import "../styles/Sidebar.css";
 import SidebarChannel from "./SidebarChannel";
 
 const Sidebar = () => {
+  const user = useSelector(selectUser);
+
+  const logout = () => {
+    auth.signOut();
+  };
+
   return (
     <div className="sidebar">
       <div className="sidebar__top">
@@ -54,10 +63,14 @@ const Sidebar = () => {
       </div>
 
       <div className="sidebar__profile">
-        <Avatar src="https://avatars.githubusercontent.com/u/71883296?s=400&u=e6baa8f4068ad5a53422ed9852d82be92b7d7274&v=4" />
+        <Avatar
+          className="sidebar__profile__avatar"
+          onClick={logout}
+          src={user.photo}
+        />
         <div className="sidebar__profileInfo">
-          <h3>Abdur Nour Tanim</h3>
-          <p>#239fd34</p>
+          <h3>{user.displayName}</h3>
+          <p>#{user.uid.substring(0, 6)}</p>
         </div>
         <div className="sidebar__profileIcons">
           <MicIcon />

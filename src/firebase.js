@@ -1,10 +1,21 @@
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyClaDcigku-nFyWTP8AgwGyGkgr3ellFuA",
-  authDomain: "discord-clone-9210d.firebaseapp.com",
-  projectId: "discord-clone-9210d",
-  storageBucket: "discord-clone-9210d.appspot.com",
-  messagingSenderId: "63647562252",
-  appId: "1:63647562252:web:a854e74e01eb717074cc29",
-  measurementId: "G-RM7M24S0ZG",
+  apiKey: "AIzaSyBdgSUdaSXQRL9hCWpuSCsK33-2c4p2UHQ",
+  authDomain: "discord-clone-4d549.firebaseapp.com",
+  projectId: "discord-clone-4d549",
+  storageBucket: "discord-clone-4d549.appspot.com",
+  messagingSenderId: "265058914042",
+  appId: "1:265058914042:web:7246d123d8b415e0cc0343",
+  measurementId: "G-5NCJWSD7D4",
 };
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
+
+export { auth, provider };
+export default db;
