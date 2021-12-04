@@ -17,7 +17,7 @@ import SidebarChannel from "./SidebarChannel";
 const Sidebar = () => {
   const user = useSelector(selectUser);
   const [channels, setChannels] = useState([]);
-  console.log(channels);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     db.collection("channels").onSnapshot((snapshot) => {
@@ -43,8 +43,18 @@ const Sidebar = () => {
     auth.signOut();
   };
 
+  useEffect(() => {
+    window.addEventListener("resize", (e) => {
+      if (e.target.innerWidth < 768) {
+        setToggle(false);
+      } else {
+        setToggle(true);
+      }
+    });
+  }, []);
+
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${toggle ? "sidebar__show" : "sidebar__hide"}`}>
       <div className="sidebar__top">
         <h3>Discord</h3>
         <ExpandMoreIcon />

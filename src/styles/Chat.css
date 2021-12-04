@@ -50,3 +50,10 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /*Firefox*/
 }
+
+/* For Responsive */
+@media only screen and (max-width: 768px) {
+  .chat {
+    flex: 1;
+  }
+}

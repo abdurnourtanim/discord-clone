@@ -92,3 +92,14 @@
 .sidebar__profile__avatar {
   cursor: pointer;
 }
+
+/* For Responsive */
+
+@media only screen and (max-width: 768px) {
+  .sidebar__hide {
+    display: none;
+  }
+  .sidebar__show {
+    display: flex;
+  }
+}

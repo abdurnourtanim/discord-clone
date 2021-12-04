@@ -48,6 +48,7 @@ const Chat = () => {
       <div className="chat__massages">
         {massages.map((massage) => (
           <Massage
+            key={massage.timestamp}
             timestamp={massage.timestamp}
             massage={massage.massage}
             user={massage.user}

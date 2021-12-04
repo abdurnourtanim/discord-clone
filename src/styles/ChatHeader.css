@@ -46,3 +46,11 @@
   color: #fff;
   border: none;
 }
+.chatHeader__left {
+  display: flex;
+  align-items: center;
+}
+.chatHeader__left > .MuiSvgIcon-root:hover {
+  color: #fff;
+  cursor: pointer;
+}
