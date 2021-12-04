@@ -54,7 +54,7 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className={`sidebar ${toggle ? "sidebar__show" : "sidebar__hide"}`}>
+    <div className={`sidebar ${toggle ? "sidebar__show" : "sidebar__show"}`}>
       <div className="sidebar__top">
         <h3>Discord</h3>
         <ExpandMoreIcon />
