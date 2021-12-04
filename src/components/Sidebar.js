@@ -17,6 +17,7 @@ import SidebarChannel from "./SidebarChannel";
 const Sidebar = () => {
   const user = useSelector(selectUser);
   const [channels, setChannels] = useState([]);
+  console.log(channels);
 
   useEffect(() => {
     db.collection("channels").onSnapshot((snapshot) => {
@@ -33,7 +34,7 @@ const Sidebar = () => {
     const channelName = prompt("Enter new channel name.");
     if (channelName) {
       db.collection("channels").add({
-        channelName: channelName,
+        channelName,
       });
     }
   };
