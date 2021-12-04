@@ -3,8 +3,7 @@
   flex-direction: column;
   flex: 0.75;
   background-color: #363a3f;
-  min-height: 100vh;
-  height: 100%;
+  height: 100vh;
 }
 .chat__input {
   color: lightgray;
@@ -42,4 +41,12 @@
 }
 .chat__massages {
   flex: 1;
+  overflow: scroll;
+}
+.chat__massages::-webkit-scrollbar {
+  display: none;
+}
+.chat__massages {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /*Firefox*/
 }

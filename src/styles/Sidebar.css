@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   flex: 0.25;
-  min-height: 100vh;
-  height: 100%;
+  height: 100vh;
   background-color: #2f3135;
 }
 .sidebar__top {
@@ -18,6 +17,14 @@
 
 .sidebar__channels {
   flex: 1;
+  overflow: scroll;
+}
+.sidebar__channels::-webkit-scrollbar {
+  display: none;
+}
+.sidebar__channels {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /*Firefox*/
 }
 .sidebar__channelsHeader {
   display: flex;
