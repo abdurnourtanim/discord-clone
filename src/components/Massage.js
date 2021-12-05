@@ -10,7 +10,7 @@ const Massage = ({ timestamp, massage, user }) => {
         <h4>
           {user.displayName}
           <span className="massage__timestamp">
-            {new Date(timestamp?.toDate()).toUTCString()}
+            {new Date(timestamp?.toDate()).toLocaleTimeString("en-us")}
           </span>
         </h4>
 
