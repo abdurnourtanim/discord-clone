@@ -6,7 +6,7 @@ import PeopleAltRoundedIcon from "@material-ui/icons/PeopleAltRounded";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import SendRoundedIcon from "@material-ui/icons/SendRounded";
 import React, { createContext, useState } from "react";
-import "../styles/ChatHeader.css";
+import classes from "../styles/ChatHeader.module.css";
 
 export const testContext = createContext("this is context api value");
 
@@ -17,21 +17,21 @@ const ChatHeader = ({ channelName }) => {
   };
 
   return (
-    <div className="chatHeader">
-      <div className="chatHeader__left">
+    <div className={classes.chatHeader}>
+      <div className={classes.chatHeader__left}>
         <MenuIcon onClick={toggleSidebar} />
         <h3>
-          <span className="chatHeader__hash">#</span>
+          <span className={classes.chatHeader__hash}>#</span>
           {channelName}
         </h3>
       </div>
 
-      <div className="chatHeader__right">
+      <div className={classes.chatHeader__right}>
         <NotificationsIcon />
         <EditLocationRoundedIcon />
         <PeopleAltRoundedIcon />
 
-        <div className="chatHeader__search">
+        <div className={classes.chatHeader__search}>
           <input type="text" placeholder="search" />
           <SearchRoundedIcon />
         </div>

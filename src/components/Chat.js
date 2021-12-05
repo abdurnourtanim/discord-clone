@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { selectChannelId, selectChannelName } from "../features/appSlice";
 import { selectUser } from "../features/userSlice";
 import db from "../firebase";
-import "../styles/Chat.css";
+import classes from "../styles/Chat.module.css";
 import ChatHeader from "./ChatHeader";
 import Massage from "./Massage";
 
@@ -42,10 +42,10 @@ const Chat = () => {
   };
 
   return (
-    <div className="chat">
+    <div className={classes.chat}>
       <ChatHeader channelName={channelName} />
 
-      <div className="chat__massages">
+      <div className={classes.chat__massages}>
         {massages.map((massage) => (
           <Massage
             key={massage.timestamp}
@@ -56,7 +56,7 @@ const Chat = () => {
         ))}
       </div>
 
-      <div className="chat__input">
+      <div className={classes.chat__input}>
         <AddCircleIcon fontSize="large" />
         <form>
           <input
@@ -66,7 +66,7 @@ const Chat = () => {
             placeholder={`Massages ${channelName}`}
           />
           <button
-            className="chat__inputButton"
+            className={classes.chat__inputButton}
             type="submit"
             onClick={sendMassage}
           >
@@ -74,7 +74,7 @@ const Chat = () => {
           </button>
         </form>
 
-        <div className="chat__inputIcons">
+        <div className={classes.chat__inputIcons}>
           <CardGiftcardIcon fontSize="large" />
           <GifIcon fontSize="large" />
           <EmojiEmotionsIcon fontSize="large" />

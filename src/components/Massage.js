@@ -1,15 +1,15 @@
 import { Avatar } from "@material-ui/core";
 import React from "react";
-import "../styles/Massage.css";
+import classes from "../styles/Massage.module.css";
 
 const Massage = ({ timestamp, massage, user }) => {
   return (
-    <div className="massage">
+    <div className={classes.massage}>
       <Avatar src={user.photo} />
-      <div className="massage__info">
+      <div className={classes.massage__info}>
         <h4>
           {user.displayName}
-          <span className="massage__timestamp">
+          <span className={classes.massage__timestamp}>
             {new Date(timestamp?.toDate()).toLocaleString()}
           </span>
         </h4>

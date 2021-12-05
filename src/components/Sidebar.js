@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import db, { auth } from "../firebase";
-import "../styles/Sidebar.css";
+import classes from "../styles/Sidebar.module.css";
 import SidebarChannel from "./SidebarChannel";
 
 const Sidebar = () => {
@@ -54,22 +54,29 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className={`sidebar ${toggle ? "sidebar__show" : "sidebar__show"}`}>
-      <div className="sidebar__top">
+    <div
+      className={`${classes.sidebar} ${
+        toggle ? classes.sidebar__show : classes.sidebar__show
+      }`}
+    >
+      <div className={classes.sidebar__top}>
         <h3>Discord</h3>
         <ExpandMoreIcon />
       </div>
 
-      <div className="sidebar__channels">
-        <div className="sidebar__channelsHeader">
-          <div className="sidebar__header">
+      <div className={classes.sidebar__channels}>
+        <div className={classes.sidebar__channelsHeader}>
+          <div className={classes.sidebar__header}>
             <ExpandMoreIcon />
             <h4>Channels</h4>
           </div>
-          <AddIcon onClick={addChannel} className="sidebar__addChannel" />
+          <AddIcon
+            onClick={addChannel}
+            className={classes.sidebar__addChannel}
+          />
         </div>
 
-        <div className="sidebar__channels__list">
+        <div className={classes.sidebar__channels__list}>
           {channels.map(({ id, channel }) => (
             <SidebarChannel
               key={id}
@@ -80,33 +87,33 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className="sidebar__voice">
+      <div className={classes.sidebar__voice}>
         <SignalCellularAltIcon
-          className="sidebar__voiceIcon"
+          className={classes.sidebar__voiceIcon}
           fontSize="large"
         />
-        <div className="sidebar__voiceInfo">
+        <div className={classes.sidebar__voiceInfo}>
           <h3>Voice Connected</h3>
           <p>Excellent</p>
         </div>
 
-        <div className="sidebar__voiceIcons">
+        <div className={classes.sidebar__voiceIcons}>
           <InfoOutlinedIcon />
           <CallIcon />
         </div>
       </div>
 
-      <div className="sidebar__profile">
+      <div className={classes.sidebar__profile}>
         <Avatar
-          className="sidebar__profile__avatar"
+          className={classes.sidebar__profile__avatar}
           onClick={logout}
           src={user.photo}
         />
-        <div className="sidebar__profileInfo">
+        <div className={classes.sidebar__profileInfo}>
           <h3>{user.displayName}</h3>
           <p>#{user.uid.substring(0, 6)}</p>
         </div>
-        <div className="sidebar__profileIcons">
+        <div className={classes.sidebar__profileIcons}>
           <MicIcon />
           <HeadsetIcon />
           <SettingsIcon />
